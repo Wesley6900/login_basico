@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="login.js" defer></script>
+    <title>Login</title>
+
+    <style>
+        body{
+            background: #20004b;
+        }
+
+        body div{
+            margin-top: 100px;
+            display: grid;
+            justify-content: center;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            transition: 2s;
+            height: 410px;
+        }
+
+        body div h1,
+        body div h2{
+            font-size: 40px;
+            text-align: center;
+            color: #fff;
+        }
+
+        body form label{
+            color: #fff;
+        }
+
+        body form{
+            margin-bottom: 70px;
+            background: #000000;
+            border: 1px solid #fff;
+            padding: 20px;
+            border-radius: 10px;
+            display: grid;
+        }
+
+        body form input{
+            background: transparent;
+            border-radius: 5px;
+            margin: 10px 0 10px;
+            height: 20px;
+            background: #ffffff;
+        }
+
+        body form input:focus{
+            outline: 1px solid #0c007c;
+            background: #dfdfdf;
+            color: #000000;
+        }
+
+        body form button{
+            border-radius: 10px;
+            padding: 5px;
+            font-size: 18px;
+            color: #fff;
+            background: #16007a;
+            cursor: pointer;
+        }
+
+        body form a{
+            margin-top: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 id="login">Login</h1>
+        <form>
+            <label for="login_text">
+                Usuario
+            </label>
+
+            <input type="text" name="login_text" id="login_text">
+
+            <label for="senha_number">
+                Senha
+            </label>
+
+            <input type="number" name="senha_number" id="senha_number">
+            
+            <button type="button">Logar</button>
+
+            <a href="#cadastrar">Cadastrar</a>
+        </form>
+
+        <h2 id="cadastrar">Cadastrar</h2>
+        <form id="cadastrar">
+            <label for="login_text">
+                Usuario
+            </label>
+
+            <input type="text" name="login_text_cadastrar" minlength="5" id="login_text_cadastrar">
+
+            <label for="Email">
+                Email
+            </label>
+
+            <input type="email" pattern=".*@.*" minlength="6" name="Email_cadastrar" id="email_cadastrar">
+
+            <label for="">
+                Senha
+            </label>
+
+            <input type="number" minlength="8" name="senha_number_cadastrarr" id="senha_number_cadastrar">
+            
+            <button type="button" id="cadastrarForm" onclick="Cadastrar()">Cadastrar</button>
+
+            <a href="#login">Logar</a>
+        </form>
+    </div>
+</body>
+</html>
