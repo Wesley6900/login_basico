@@ -11,13 +11,11 @@
             background: #20004b;
         }
 
-        body div{
-            margin-top: 100px;
+        body .box{
+            margin-top: 90px;
             display: grid;
             justify-content: center;
             overflow-y: hidden;
-            overflow-x: hidden;
-            transition: 2s;
             height: 410px;
         }
 
@@ -33,7 +31,7 @@
         }
 
         body form{
-            margin-bottom: 70px;
+            margin-bottom: 100px;
             background: #000000;
             border: 1px solid #fff;
             padding: 20px;
@@ -71,50 +69,52 @@
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1 id="login">Login</h1>
-        <form>
-            <label for="login_text">
-                Usuario
-            </label>
+    <div class="box" id="box_margin">
+        <div class="form_scrool" id="form_scrool">
+            <h1 id="login" class="login">Login</h1>
+            <form id="form_1">
+                <label for="login_text">
+                    Usuario
+                </label>
 
-            <input type="text" name="login_text" id="login_text">
+                <input type="text" name="login_text" id="login_text">
 
-            <label for="senha_number">
-                Senha
-            </label>
+                <label for="senha_number">
+                    Senha
+                </label>
 
-            <input type="number" name="senha_number" id="senha_number">
+                <input type="number" name="senha_number" id="senha_number">
+                
+                <button type="button" onclick="login()">Logar</button>
+
+                <a href="#cadastrar">Cadastrar</a>
+            </form>
             
-            <button type="button">Logar</button>
+            <h2 id="cadastrar">Cadastrar</h2>
 
-            <a href="#cadastrar">Cadastrar</a>
-        </form>
+            <form id="form_2">
+                <label for="login_text">
+                    Usuario
+                </label>
 
-        <h2 id="cadastrar">Cadastrar</h2>
-        <form id="cadastrar">
-            <label for="login_text">
-                Usuario
-            </label>
+                <input type="text" name="login_text_cadastrar" minlength="5" id="login_text_cadastrar">
 
-            <input type="text" name="login_text_cadastrar" minlength="5" id="login_text_cadastrar">
+                <label for="Email">
+                    Email
+                </label>
 
-            <label for="Email">
-                Email
-            </label>
+                <input type="email" pattern=".*@.*" minlength="6" name="Email_cadastrar" id="email_cadastrar">
 
-            <input type="email" pattern=".*@.*" minlength="6" name="Email_cadastrar" id="email_cadastrar">
+                <label for="">
+                    Senha
+                </label>
 
-            <label for="">
-                Senha
-            </label>
+                <input type="number" minlength="8" name="senha_number_cadastrar" id="senha_number_cadastrar">
 
-            <input type="number" minlength="8" name="senha_number_cadastrarr" id="senha_number_cadastrar">
-            
-            <button type="button" id="cadastrarForm" onclick="Cadastrar()">Cadastrar</button>
+                <button type="button" id="cadastrarForm" onclick="cadastrar()">Cadastrar</button>
 
-            <a href="#login">Logar</a>
-        </form>
-    </div>
-</body>
+                <a href="#login">Logar</a>
+            </form>
+        </div>
+</body> 
 </html>
