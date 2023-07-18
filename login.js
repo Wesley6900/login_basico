@@ -17,23 +17,29 @@ function cadastrar(){
     
     if (usuarioEncontrado) {
         alert('Usuario ja registrado, tente mudar seu usuario para que possa ser concluido o cadastro!!!');
-        document.getElementById('login_text_cadastrar').value = '';
-        document.getElementById('email_cadastrar').value = '';
-        document.getElementById('senha_number_cadastrar').value = '';
+        document.getElementById('login_text_cadastrar')
+        document.getElementById('email_cadastrar')
+        document.getElementById('senha_number_cadastrar')
 
     }else{
-        if (cadastro_usuarios.usuario != '' && email_cadastrar != '' && senha_number_cadastrar != '') {
+        if (cadastro_usuarios.usuario === '' && email_cadastrar === '' && senha_number_cadastrar === '') {
+            alert('Digite os dados corretamente!!!')
+        }else{
             usuario_cadastrado.push(cadastro_usuarios)
             alert('cadastro bem sucedido!!!')
 
             document.getElementById('login_text_cadastrar').value = '';
             document.getElementById('email_cadastrar').value = '';
             document.getElementById('senha_number_cadastrar').value = '';
-        }
 
-        console.log(usuario_cadastrado);
+            login_text_cadastre = '';
+            email_cadastrar = '';
+            senha_number_cadastrar = '';
+
+            console.log(usuario_cadastrado);
 
         alert('Usuario cadastrado!!!');
+        }
     }
 
     
