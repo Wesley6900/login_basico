@@ -13,19 +13,30 @@ function cadastrar(){
         'senha' : senha_number_cadastrar,
     }
 
-
-    if (cadastro_usuarios.usuario != '' && email_cadastrar != '' && senha_number_cadastrar != '') {
-        usuario_cadastrado.push(cadastro_usuarios)
-        alert('cadastro bem sucedido!!!')
-
+    let usuarioEncontrado = usuario_cadastrado.find(cadastro => cadastro.usuario === login_text_cadastre);
+    
+    if (usuarioEncontrado) {
+        alert('Usuario ja registrado, tente mudar seu usuario para que possa ser concluido o cadastro!!!');
         document.getElementById('login_text_cadastrar').value = '';
         document.getElementById('email_cadastrar').value = '';
         document.getElementById('senha_number_cadastrar').value = '';
+
+    }else{
+        if (cadastro_usuarios.usuario != '' && email_cadastrar != '' && senha_number_cadastrar != '') {
+            usuario_cadastrado.push(cadastro_usuarios)
+            alert('cadastro bem sucedido!!!')
+
+            document.getElementById('login_text_cadastrar').value = '';
+            document.getElementById('email_cadastrar').value = '';
+            document.getElementById('senha_number_cadastrar').value = '';
+        }
+
+        console.log(usuario_cadastrado);
+
+        alert('Usuario cadastrado!!!');
     }
 
-    console.log(usuario_cadastrado);
-
-    alert('Usuario cadastrado!!!');
+    
 };
 
 
@@ -34,6 +45,7 @@ function login() {
     var senha_acessar = window.document.getElementById('senha_number').value;
 
     let usuarioEncontrado = usuario_cadastrado.find(cadastro => cadastro.usuario === login_acessar && cadastro.senha === senha_acessar);
+    
     if (usuarioEncontrado) {
         alert('Seja bem vindo ' + login_acessar);
     }else{
